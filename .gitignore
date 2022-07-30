@@ -1,0 +1,11 @@
+.vs
+.idea
+out
+x64
+cmake-build-*/
+
+**/*.sln
+**/*.vcxproj
+**/*.vcxproj.*
+
+**/*.DS_Store
