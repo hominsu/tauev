@@ -1,0 +1,23 @@
+licenses(["notice"])
+
+exports_files(["LICENSE"])
+
+package(default_visibility = ["//visibility:public"])
+
+cc_library(
+    name = "tauev",
+    srcs = glob(["src/*.cc"]),
+    hdrs = glob([
+        "include/**/*.h",
+        "src/*.h",
+    ]),
+    copts = ["-std=c++17"],
+    linkopts = ["-pthread"]
+)
+
+cc_binary(
+    name = "logger_example",
+    deps = [":tauev"],
+    srcs = ["example/logger/logger.cc"],
+    copts = ["-std=c++17"]
+)
